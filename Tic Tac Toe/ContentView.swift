@@ -28,12 +28,12 @@ struct ContentView: View {
                     .frame(width: 120, height: 120, alignment: .center)
                     .cornerRadius(30)
                     .onTapGesture {
-                        if moves[index] == ""{
-                            moves[index] = xTurn ? "X" : "O"
-                            xTurn.toggle()
+                        withAnimation(Animation.default) {
+                            if moves[index] == "" {
+                                moves[index] = xTurn ? "X" : "O"
+                                xTurn.toggle()
+                            }
                         }
-                        
-                        
                     }
                 }
             })
